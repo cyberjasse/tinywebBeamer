@@ -1,0 +1,9 @@
+*~
+*.nav
+*.aux
+*.log
+*.out
+*.nat
+*.tex.backup
+*.toc
+*.snm
