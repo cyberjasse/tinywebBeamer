@@ -11,6 +11,36 @@
  \end{figure} 
 \end{frame}
 
+\begin{frame}
+ \frametitle{Implémentation}
+ \framesubtitle{Capteurs}
+ Chaque capteur contient deux fichiers WSDL:
+ \begin{enumerate}
+  \item \textbf{\texttt{dev.wsdl}} Décrit complètement les méthodes supportées par le capteur et accessibles pour l'utilisateur. Noms de méthodes avec leurs paramètres, type des paramètres et de la valeur retournée.
+  \item \textbf{\texttt{bindigs.wsdl}} Importe \texttt{dev.wsdl} et ajoute 3 méthodes accessibles seulement pour le controleur:
+   \begin{enumerate}
+    \item \texttt{void eventOn(string eventName)}
+    \item \texttt{void eventOff(string eventName)}
+    \item \texttt{void setHandlerURL(string url)}
+   \end{enumerate}
+   Pour autoriser à poster l'évenement \texttt{eventName} à l'adresse URL \texttt{url}
+ \end{enumerate}
+ Le capteur lance un serveur HTTP qui accède au fichier \texttt{bindigs.wsd}.\\
+ La requête est encodée dans l'URL et retourne un fichier XML.
+\end{frame}
+
+\begin{frame}
+ \frametitle{Implémentation}
+ pour ajouter un nouveau capteur dans le réseau, l'\textit{enregistreur} (Sensor Registrar) télécharge les fichiers wsdl et enregistres les données dans un fichier XML avec une IP préétablie et un nom donné par l'utilisateur.
+ Ensuite il envoie le XML au controleur.
+ Il peut être implémenté aussi bien dans un PC qu'un point d'accès 802.15.4.\\
+ \vspace{4mm}
+ Le \textit{controleur} agit comme un serveur HTTP.\\
+ \texttt{http://Controller/index.htm} retourne la liste des capteurs enregistrés.\\
+ \texttt{http://Controller/wsdl/<sensorName>.wsdl} retourne la description WSDL du capteur \texttt{<sensorName>}
+\end{frame}
+
+
 \newcommand{\unite}{(octets)}
 \begin{frame}%[fragile]
  \frametitle{Implémentation}
@@ -18,7 +48,7 @@
  \begin{center}
  \begin{tabular}{|l|r|r|r|}
   \hline
-  Module & Code & Data & Const\\
+  Module & Code & Data & Const\footnote{\textbf{Const}: Constantes enregistrées dans la ROM}\\
   ~ & \unite & \unite & \unite \\
   \hline
   Librairies & 804 & 2 & 76\\
@@ -32,8 +62,6 @@
  \end{tabular}
  \end{center}
 \end{frame}
-
-%TODO description de figure 11
 
 \subsection{Déploiement}
 \begin{frame}
