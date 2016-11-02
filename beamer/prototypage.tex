@@ -2,7 +2,7 @@
 \subsection{Implémentation}
 \begin{frame}
  \frametitle{Prototypage}
- Un réseau de capteurs sans fil a été déployé dans un maison pendant 12 jours dans un contexte de gestion d'énergie.
+ Un réseau de capteurs sans fil a été déployé dans une maison pendant 12 jours dans un contexte de gestion d'énergie.
  L'implémentation de leur prototype ne requiert que 15,8k, parseur XML, serveur HTTP et file TCP/IP inclus !
  \begin{figure}
   \centering
@@ -11,10 +11,26 @@
  \end{figure} 
 \end{frame}
 
-\begin{frame}
+\newcommand{\unite}{(octets)}
+\begin{frame}%[fragile]
  \frametitle{Implémentation}
  \framesubtitle{Mémoire utilisée}
- %TODO inclure table 5
+ \begin{center}
+ \begin{tabular}{|l|r|r|r|}
+  \hline
+  Module & Code & Data & Const\\
+  ~ & \unite & \unite & \unite \\
+  \hline
+  Librairies & 804 & 2 & 76\\
+  controle hardware & 408 & 78 & 12\\
+  Driver radio & 4282 & 404 & 14\\
+  TCP/IP & 2964 & 332 & 4\\
+  Serveur web+parseur XML & 2380 & 54 & 4864\\
+  \hline
+  \textbf{Total} & \textbf{10838} & \textbf{870} & \textbf{4970}\\
+  \hline
+ \end{tabular}
+ \end{center}
 \end{frame}
 
 %TODO description de figure 11
@@ -22,7 +38,7 @@
 \subsection{Déploiement}
 \begin{frame}
  \frametitle{Déploiement}
- Le réseau de capteurs déployé sont aussi des capteurs communément utilisés pour la sécurité.
+ Le réseau de capteurs déployé contient aussi des capteurs communément utilisés pour la sécurité.
  Par exemple, ils ont utilisés des capteurs de mouvement, d'ouverture de porte, ...
  Mais ils ont également placé des capteurs permettant de mesurer et regler la consomation d'énergie de n'importe quel appareil grâce à leurs \textit{smart-sockets}.
 \end{frame}
