@@ -116,7 +116,7 @@ Délai (ms) & 6 & 375 & 6150\% \\
  \framesubtitle{Architecture}
  \begin{figure}
   \centering
-  \includegraphics[scale=0.5]{figures/eventing.jpg}
+  \includegraphics[scale=0.43]{figures/eventing.jpg}
   \caption{Architecture Web services eventing}
  \end{figure}
  Implémenté dans le contrôleur.
@@ -124,16 +124,23 @@ Délai (ms) & 6 & 375 & 6150\% \\
 %utilisation de fichier wsdl + expliquer ce que c'est + les protocoles disponible, on chois http
 \begin{frame}
  \frametitle{WSDL}
- \framesubtitle{Utilité}
  Un fichier WSDL décrit les méthodes disponibles sur le capteur. Nous développerons leur utilisation dans la section Prototypage.
  WSDL supporte trois protocoles pour les requêtes: SOAP, HTTP et MIME.\\
+ \vspace{5mm}
+ \begin{center}
  \begin{tabular}{|c|c|c|c|}
  \hline
  Nom de la méthode & SOAP 1.1 & SOAP 1.2 & HTTP\\
  \hline
- 
+ GetTemperature & 491 & 442 & 162\\
+ GetTemperatureResponse & 479 & 499 & 258\\
+ SetTemperature(70) & 528 & 482 & 202\\
+ SetTemperatureResponse & 455 & 475 & 230\\
+ \hline
  \end{tabular}
+ \end{center}
+ \vspace{5mm}
+ On utilisera donc le protocole HTTP pour les requêtes.
 \end{frame}
-%tableau http + exemple d'appel de fonction
-\subsection{xml}
+\subsection{XML}
 %utilisation de xml. + tableau + expliquer chaque ligne du tableau.
