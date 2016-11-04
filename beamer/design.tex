@@ -144,3 +144,41 @@ Délai (ms) & 6 & 375 & 6150\% \\
 \end{frame}
 \subsection{XML}
 %utilisation de xml. + tableau + expliquer chaque ligne du tableau.
+\begin{frame}
+ \frametitle{Optimisation du message XML}
+ Le message envoyé pour la requête est de forme XML.
+ Puisque les informations présentes dans le messages seront toujours une liste de noms de méthodes, leurs arguments et leurs valeurs décrit dans le WSDL, il suffira juste d'un algorithme de parsing pour le lire.
+ Ce qui réduit la place en mémoire et la complexité.\\
+ \vspace{4mm}
+ Ensuite, il existe plusieurs astuces pour réduire la taille du message.\\
+ \begin{center}
+  \begin{tabular}{|c|c|c|c|c|}
+   \hline
+   Compression & Get & Get & Set & Set\\
+   ~ & Temp & TempResponse & Temp & TempResponse\\
+   \hline
+   Original & 85 & 181 & 125 & 153\\
+   \hline
+   Xmlppm & 65 & 98 & 85 & 92\\
+   Zip & 114 & 157 & 138 & 151\\
+   \hline
+   Comp1 & 81 & 101 & 101 & 107\\
+   Comp2 & 26 & 46 & 46 & 53\\
+   \hline
+  \end{tabular}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Optimisation du message XML}
+ \framesubtitle{Techniques}
+ \begin{itemize}
+  \item \textbf{Original}, le message XML Initial.
+  \item \textbf{Zip}, une méthode de compression.
+  \item \textbf{Xmlppm}, une méthode de compression spécifique aux fichier XML.
+  \item \textbf{Comp1}: On remplace les tags par une valeur codée en 1 octet.
+  Un dictionnaire Nom de méthode $\rightarrow$ valeur est fourni par le capteur et devra être utilisé coté utilisateur (plutot coté controleur).
+  %Le dictionnaire sera demandé typique qu'une fois.
+  \item \textbf{Comp2}: Le header (<?xml version=...) et le namespace URL sont remplacés par des tags compacts.
+ \end{itemize}
+\end{frame}
