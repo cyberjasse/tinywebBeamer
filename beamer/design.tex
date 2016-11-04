@@ -126,7 +126,7 @@ Délai (ms) & 6 & 375 & 6150\% \\
  \frametitle{WSDL}
  Un fichier WSDL décrit les méthodes disponibles sur le capteur. Nous développerons leur utilisation dans la section Prototypage.
  WSDL supporte trois protocoles pour les requêtes: SOAP, HTTP et MIME.\\
- \vspace{5mm}
+ \vspace{3mm}
  \begin{center}
  \begin{tabular}{|c|c|c|c|}
  \hline
@@ -139,14 +139,15 @@ Délai (ms) & 6 & 375 & 6150\% \\
  \hline
  \end{tabular}
  \end{center}
- \vspace{5mm}
- On utilisera donc le protocole HTTP pour les requêtes.
+ \vspace{3mm}
+ On utilisera donc le protocole HTTP pour les requêtes. Requête dans l'URL:\\
+ \texttt{SetTemperature(25)}~$\rightarrow$~\texttt{http://192.168.1.4/setTemp?temp=25}
 \end{frame}
 \subsection{XML}
 %utilisation de xml. + tableau + expliquer chaque ligne du tableau.
 \begin{frame}
  \frametitle{Optimisation du message XML}
- Le message envoyé pour la requête est de forme XML.
+ La requête et la réponse peut aussi être encodé dans un XML en utilisant HTTP POST.
  Puisque les informations présentes dans le messages seront toujours une liste de noms de méthodes, leurs arguments et leurs valeurs décrit dans le WSDL, il suffira juste d'un algorithme de parsing pour le lire.
  Ce qui réduit la place en mémoire et la complexité.\\
  \vspace{4mm}
