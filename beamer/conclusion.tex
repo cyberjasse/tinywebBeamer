@@ -13,7 +13,7 @@
  \begin{itemize}
   \item \textbf{Sleep mode}: Comment s'assurer que tous les échanges de messages dans la couche réseaux soient designés pour le sleep mode ?
   \item \textbf{Multi-hop connection}: Et si le message doit passer par plusieurs capteurs pour atteindre le controleur ?\\
-  Alors chaque capteurs intermédiaires doivent envoyer des messages wake-up, maintenir une liste d'adresse MAC...Tout cela va créer de l'overhead
+  Alors chaque capteur intermédiaire doit envoyer des messages wake-up, maintenir une liste d'adresse MAC...Tout cela va créer de l'overhead
   \item \textbf{Sécurité}: Comment assurer la sécurité entre un capteur et un controleur ?\\
   %Il vaut mieux éviter de crypter un paquet 6lowpan pour qu'il puisse être converti en IPv6 sans dévoir décrypter.\\
   CC2420 crypte et décrypte en hardware en définissant quelle partie il faut crypter.

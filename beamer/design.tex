@@ -3,23 +3,27 @@
 %1 pourquoi utiliser xml, tcp, ip ... consomme de la batterie + UDP pas fiable ?
 \begin{frame}
  \frametitle{Design et implications}
- Au lieu d'utiliser des données brutes, utiliser TCP/IP.\\
+ TCP/IP à la place des données brutes:\\
  \vspace{5mm}
- \textbf{$\rightarrow$} Accès à de nombreux outils disponibles \\
+ \textbf{$\rightarrow$} Accès à de nombreux outils\\
  \textbf{$\rightarrow$} Plus de chances d'être accepté par la communauté.\\
  \vspace{5mm}
- Mais tout cela crée de l'overhead, ce qui semble inapproprié pour un capteur aux ressources limitées. On verra des astuces qui permettront de réduire considérablement la taille des paquets envoyés.
+\begin{block}{Inconvénient}
+Overhead imposé par les standards, techniques de réduction de taille des paquets nécessaires
+\end{block}
+ 
 \end{frame}
 %utiliser une encapsulation tcp/ip augmente fortement la taille du message (40 octets) + inserer tableau
 \begin{frame}
 \frametitle{TCP/IP overhead}
-L'encapsulation TCP/IP augmente la taille des paquets (le header fait 40 octets).\\
+Augmentation de la taille des paquets : header de 40 octets.\\
 \vspace{5mm}
+Exemple de transfert de 10 octets bruts avec et sans TCP/IP: \\
 \begin{center}
 \begin{tabular}{|c|c|c|c|}
 \hline
 ~ & Minimum & Avec TCP/IP & TCP/IP\\
-~ & requit & ~ & overhead\\
+~ & requis & ~ & overhead\\
 \hline
 Paquets & 2 & 8 & 300\% \\
 Octets & 11 & 338 & 2793\% \\
@@ -40,7 +44,7 @@ Délai (ms) & 6 & 375 & 6150\% \\
 \end{frame}
 %TCP persistante
 \begin{frame}
- \frametitle{connexion TCP persistante}
+ \frametitle{Connexion TCP persistante}
  Sur la figure \ref{tcplatences} on observe qu'à chaque transmission, deux handshakes (début et fin) sont transmis. Or les capteurs communiqueront toujours qu'avec un seul autre appareil.
  %Dans l'application qu'ils utilisent, les capteurs communiquent seulement avec le controleur.
  On peut donc garder une connexion TCP persistante.\\
