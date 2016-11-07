@@ -3,7 +3,7 @@
 \begin{frame}
  \frametitle{Prototypage}
  Un réseau de capteurs sans fil a été déployé dans une maison pendant 12 jours dans un contexte de gestion d'énergie.
- L'implémentation de leur prototype ne requiert que 15,8k, parseur XML, serveur HTTP et file TCP/IP inclus !
+ L'implémentation de leur prototype ne requiert \alert{que 15,8k}, parseur XML, serveur HTTP et file TCP/IP inclus !
  \begin{figure}
   \centering
   \includegraphics[scale=0.36]{figures/implementation.jpg}
@@ -35,9 +35,13 @@
  Ensuite il envoie le XML au controleur.
  Il peut être implémenté aussi bien dans un PC qu'un point d'accès 802.15.4.\\
  \vspace{4mm}
- Le \textit{controleur} agit comme un serveur HTTP.\\
- \texttt{http://Controller/index.htm} retourne la liste des capteurs enregistrés.\\
- \texttt{http://Controller/wsdl/<sensorName>.wsdl} retourne la description WSDL du capteur \texttt{<sensorName>}
+ Le \textit{controleur} agit comme un serveur HTTP.
+ \begin{exampleblock}{Exemples de requête}
+ \begin{itemize}
+  \item \texttt{http://Controller/index.htm}\\retourne la liste des capteurs enregistrés.
+  \item \texttt{http://Controller/wsdl/<sensorName>.wsdl}\\retourne la description WSDL du capteur \texttt{<sensorName>}
+ \end{itemize} 
+ \end{exampleblock}
 \end{frame}
 
 
@@ -64,14 +68,15 @@
 \end{frame}
 
 \subsection{Déploiement}
+\newcommand{\smartsocket}{\textit{smart-socket}~}
 \begin{frame}
  \frametitle{Déploiement}
- Le réseau de capteurs déployé contient aussi des capteurs communément utilisés pour la sécurité.
- Par exemple, ils ont utilisés des capteurs de mouvement, d'ouverture de porte, ...
- Mais ils ont également placé des capteurs permettant de mesurer et regler la consomation d'énergie de n'importe quel appareil grâce à leurs \textit{smart-sockets}.
+ %Le réseau de capteurs déployé contient aussi des capteurs communément utilisés pour la sécurité.
+ Déploiement de capteurs de mouvement, d'ouverture de porte, ...\\
+ \vspace{5mm}
+ Mais également des capteurs permettant de mesurer et regler la consomation d'énergie de n'importe quel appareil grâce à leurs \alert{\smartsocket}.
 \end{frame}
 
-\newcommand{\smartsocket}{\textit{smart-socket}~}
 \begin{frame}
  \frametitle{Diagramme du \smartsocket}
  \begin{figure}
@@ -108,8 +113,8 @@
 
 \begin{frame}
  \frametitle{Résultats}
- Grâce à un algorithme qui baisse la température du chauffage lorsque la maison est innocupée, ils ont pu économiser 7,2\% d'énergie de chauffage.
- Le graphique suivant montre l'économie totale d'énergie par jour.
+ Grâce à un algorithme qui baisse la température du chauffage lorsque la maison est innocupée, ils ont pu économiser 7,2\% d'énergie de chauffage.\\
+ Économie totale d'énergie par jour:
  \begin{figure}
   \centering
   \includegraphics[scale=0.38]{figures/energysaver.jpg}
