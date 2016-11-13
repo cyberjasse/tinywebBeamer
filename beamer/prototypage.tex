@@ -68,49 +68,6 @@
 \end{frame}
 
 \subsection{Déploiement}
-\newcommand{\smartsocket}{\textit{smart-socket}~}
-\begin{frame}
- \frametitle{Déploiement}
- %Le réseau de capteurs déployé contient aussi des capteurs communément utilisés pour la sécurité.
- Déploiement de capteurs de mouvement, d'ouverture de porte, ...\\
- \vspace{5mm}
- Mais également des capteurs permettant de mesurer et regler la consomation d'énergie de n'importe quel appareil grâce à leurs \alert{\smartsocket}.
-\end{frame}
-
-\begin{frame}
- \frametitle{Diagramme du \smartsocket}
- \begin{figure}
-  \centering
-  \includegraphics[scale=0.35]{figures/smartsocket.jpg}
-  \caption{Le \smartsocket}
- \end{figure} 
- À brancher au réseau électrique, le \smartsocket permet de mesurer l'énergie électrique consommée par l'appareil branché au \smartsocket et de l'éteindre ou l'allumer à distance.
- Il supporte jusqu'à 2kW\\
- %On a besoin de visualiser la consomation d'énergie de chaque appareil.
- %Combiné avec des capteurs d'ouverture de porte et capteur de mouvements, un algorithme de gestion d'énergie peut être appliqué.
- %Lors de l'expérience, des smart-sockets ont été utilisés pour les lampes et appareils de divertissement utilisés la plupart du temps.
-\end{frame}
-
-\def \exsca {0.21}
-\begin{frame}
- \frametitle{Quelques données collectées\footnote{L'unité de l'axe du temps n'est pas affiché pour protéger la vie privée des résidents.}}
- \begin{figure}
-  \begin{minipage}[c]{.46\linewidth}
-   \includegraphics[scale=\exsca]{figures/EXmovement.jpg}
-   \caption{Détecteur de mouvements}
-  \end{minipage}
-  \begin{minipage}[c]{.46\linewidth}
-   \includegraphics[scale=\exsca]{figures/EXpower.jpg}
-   \caption{\smartsocket de la lampe}
-  \end{minipage}
- \end{figure}
- \begin{figure}
-  \centering
-  \includegraphics[scale=\exsca]{figures/EXdoor.jpg}
-  \caption{Ouverture de la porte}
- \end{figure}
-\end{frame}
-
 \begin{frame}
  \frametitle{Résultats}
  Grâce à un algorithme qui baisse la température du chauffage lorsque la maison est innocupée, ils ont pu économiser 7,2\% d'énergie de chauffage.\\
@@ -120,7 +77,6 @@
   \includegraphics[scale=0.38]{figures/energysaver.jpg}
   \caption{Économie d'énergie totale}
  \end{figure} 
- Ils ont utilisé un algorithme se basant que sur l'occupation de la maison. Il existe de meilleurs algorithmes prenant en compte l'occupation de chaque pièces.
 \end{frame}
 
  
