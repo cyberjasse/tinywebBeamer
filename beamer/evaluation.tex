@@ -1,4 +1,5 @@
 \section{Évaluation}
+\subsection{Temps de vie}
 \begin{frame}
 \frametitle{Évaluation}
 \begin{itemize}
@@ -14,36 +15,25 @@ Dans les figures qui suivront,
 \end{itemize}
 \end{frame}
 
-\subsection{Consommation d'énergie}
 \begin{frame}
- \frametitle{Coûts énergétiques}
- Mesure du temps de vie de batterie pour des payload allant de 1 à 80 octets.\\
- $\Rightarrow$ Suffisant pour les payload transmis lors du prototypage, utilisant le XML optimisé.\\
- Pour les paquets WS, le payload est encapsulé avec un header HTTP 1.1 pour un message request.
+ \frametitle{Temps de vie en fonction du payload}
+ \begin{figure}
+  \centering
+  \includegraphics[scale=0.35]{figures/tempsvie.jpg}
+  \caption{Temps de vie. Radio on ou off entre les transferts}
+ \end{figure} 
+\end{frame}
+
+\begin{frame}
+ \frametitle{Temps de vie}
+ \framesubtitle{Remarque}
+ %Mesure du temps de vie de batterie pour des payload allant de 1 à 80 octets.\\
+ %$\Rightarrow$ Suffisant pour les payload transmis lors du prototypage, utilisant le XML optimisé.\\
+ (Pour les paquets WS, le payload est encapsulé avec un header HTTP 1.1 pour un message request.)\\
+ \vspace{3mm}
  \begin{block}{Remarque}
   Lorsque le payload dépasse 53 octets, il devient trop volumineux pour être envoyé en un seul paquet si on utilise une encapsulation TCP/IP et HTTP~1.1.
  \end{block}
-\end{frame}
-
-\def \radiosca {0.4}
-\begin{frame}
- \frametitle{Temps de vie en fonction du payload}
- \framesubtitle{Radio éteinte entre les transferts TCP}
- \begin{figure}
-  \centering
-  \includegraphics[scale=\radiosca]{figures/radiooff.jpg}
-  \caption{Radio éteinte entre les transferts}
- \end{figure} 
-\end{frame}
-
-\begin{frame}
- \frametitle{Temps de vie en fonction du payload}
- \framesubtitle{Radio active pendant tout le transfert TCP}
- \begin{figure}
-  \centering
-  \includegraphics[scale=\radiosca]{figures/radioon.jpg}
-  \caption{Radio allumée pendant toute la transmission}
- \end{figure} 
 \end{frame}
 
 %{Temps de vie en fonction du payload}{Observations} Oralement
