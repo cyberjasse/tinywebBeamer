@@ -89,6 +89,30 @@ Les standards définissent 2 composants clés:
 Ces 2 composants sont définis via le Web Services Description Language (WSDL), les spécifications du web service est référencé par sa description WSDL.
 \end{frame}
 
+\begin{frame}
+\frametitle{Exemple WSDL}
+\framesubtitle{Méthode}
+\begin{exampleblock}{Déclaration d'une méthode}
+\verbatiminput{wsdlEx.xml}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemple WSDL}
+\framesubtitle{Binding}
+\begin{exampleblock}{binding à HTTP}
+\verbatiminput{bindingEx.xml}
+\end{exampleblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exemple WSDL}
+\framesubtitle{Requête}
+\begin{exampleblock}{\texttt{SetTemperature(25)} par URL}
+\texttt{http://192.168.1.4/setTemp?temp=25}
+\end{exampleblock}
+\end{frame}
+
 \begin{frame}{Avantages}
 Couche applicative:
 \begin{itemize}

@@ -1,0 +1,9 @@
+<message name="setTemperature">
+    <part name="temp" type="float"/>
+</message>
+
+<portType name="temperatureSetter">
+    <operation name="setTemp">
+        <input message="setTemperature"/>
+    </operation>
+</portType>

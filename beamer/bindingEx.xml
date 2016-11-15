@@ -1,0 +1,9 @@
+<binding type="temperatureSetter" name="b1">
+   <http:binding verb="GET"/>
+   <operation>
+     <http:operation location="http://192.168.1.4/setTemp">
+     <input>
+       <http:urlEncoded/>
+     </input>
+  </operation>
+</binding>
