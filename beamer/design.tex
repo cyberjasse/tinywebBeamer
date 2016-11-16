@@ -16,7 +16,9 @@ Overhead imposé par les standards, techniques de réduction de taille des paque
 %utiliser une encapsulation tcp/ip augmente fortement la taille du message (40 octets) + inserer tableau
 \begin{frame}
 \frametitle{TCP/IP overhead}
-Augmentation de la taille des paquets : header de 40 octets.\\
+\begin{center}
+ \alert{Header de 40 octets.}
+\end{center}
 \vspace{5mm}
 Exemple de transfert de 10 octets bruts avec et sans TCP/IP: \\
 \begin{center}
@@ -101,8 +103,7 @@ Délai (ms) & 6 & 375 & 6150\% \\
 %utilisation de fichier wsdl + expliquer ce que c'est + les protocoles disponible, on chois http
 \begin{frame}
  \frametitle{WSDL}
- Fichier WSDL : décrit les méthodes disponibles sur le capteur.\\ %(développé dans la section Prototypage).
- 3 protocoles supportés pour les requêtes: SOAP, HTTP et MIME.\\
+ 3 protocoles supportés: SOAP, HTTP et MIME.\\
  \vspace{3mm}
  \begin{center}
  \begin{tabular}{|c|c|c|c|}
@@ -123,10 +124,10 @@ Délai (ms) & 6 & 375 & 6150\% \\
 \begin{frame}
  \frametitle{Optimisation du message XML}
  La requête et la réponse peut aussi être encodé dans un XML en utilisant HTTP POST.
- Puisque les informations présentes dans le messages seront toujours une liste de noms de méthodes, leurs arguments et leurs valeurs décrit dans le WSDL, il suffira juste d'un algorithme de parsing pour le lire.
- Ce qui réduit la place en mémoire et la complexité.\\
+ Les informations présentes seront toujours une liste de noms de méthodes et arguments décrits dans le WSDL, il suffira juste d'un algorithme de parsing pour le lire.\\
+ $\Rightarrow$ Réduit la place en mémoire et la complexité.\\
  \vspace{4mm}
- Ensuite, il existe plusieurs astuces pour réduire la taille du message.\\
+ Plusieurs astuces pour réduire la taille d'un XML:\\
  \begin{center}
   \begin{tabular}{|c|c|c|c|c|}
    \hline
