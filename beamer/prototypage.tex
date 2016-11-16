@@ -14,28 +14,32 @@
 \begin{frame}
  \frametitle{Implémentation}
  \framesubtitle{Capteurs}
- Chaque capteur contient deux fichiers WSDL:
+ Chaque capteur contient 2 fichiers WSDL:
  \begin{enumerate}
-  \item \textbf{\texttt{dev.wsdl}} Décrit complètement les méthodes supportées par le capteur et accessibles pour l'utilisateur. Noms de méthodes avec leurs paramètres, type des paramètres et de la valeur retournée.
-  \item \textbf{\texttt{bindigs.wsdl}} Importe \texttt{dev.wsdl} et ajoute 3 méthodes accessibles seulement pour le controleur:
+  \item \textbf{\texttt{dev.wsdl}} Décrit les méthodes supportées par le capteur.
+  \item \textbf{\texttt{bindigs.wsdl}} Importe \texttt{dev.wsdl}, ajoute 3 méthodes accessibles seulement pour le controleur:
    \begin{enumerate}
     \item \texttt{void eventOn(string eventName)}
     \item \texttt{void eventOff(string eventName)}
     \item \texttt{void setHandlerURL(string url)}
    \end{enumerate}
-   Pour autoriser à poster l'évenement \texttt{eventName} à l'adresse URL \texttt{url}
+   %Pour autoriser à poster l'évenement \texttt{eventName} à l'adresse URL \texttt{url}
  \end{enumerate}
- Le capteur lance un serveur HTTP qui accède au fichier \texttt{bindigs.wsd}.\\
- La requête est encodée dans l'URL et retourne un fichier XML.
+ %Le capteur lance un serveur HTTP qui accède au fichier \texttt{bindigs.wsd}.\\
+ %La requête est encodée dans l'URL et retourne un fichier XML.
 \end{frame}
 
 \begin{frame}
  \frametitle{Implémentation}
- pour ajouter un nouveau capteur dans le réseau, l'\textit{enregistreur} (Sensor Registrar) télécharge les fichiers wsdl et enregistres les données dans un fichier XML avec une IP préétablie et un nom donné par l'utilisateur.
- Ensuite il envoie le XML au controleur.
- Il peut être implémenté aussi bien dans un PC qu'un point d'accès 802.15.4.\\
+ pour ajouter un nouveau capteur dans le réseau, l'\textit{enregistreur} (Sensor Registrar)
+ \begin{enumerate}
+  \item Télécharge les fichiers wsdl,
+  \item L'enregistre (+IP +nom) au format XML,
+  \item Envoie ce XML au controleur.
+ \end{enumerate}
+ %Il peut être implémenté aussi bien dans un PC qu'un point d'accès 802.15.4.\\
  \vspace{4mm}
- Le \textit{controleur} agit comme un serveur HTTP.
+ Le \textit{controleur}, un serveur HTTP.
  \begin{exampleblock}{Exemples de requête}
  \begin{itemize}
   \item \texttt{http://Controller/index.htm}\\retourne la liste des capteurs enregistrés.
